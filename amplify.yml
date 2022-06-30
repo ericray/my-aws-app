@@ -1,0 +1,21 @@
+version: 1
+frontend:
+  phases:
+    # IMPORTANT - Please verify your build commands
+    prebuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - if [ "${AWS_BRANCH}" = "master" ]; then echo "master branch"; fi
+        - if [ "${AWS_BRANCH}" = "master" ]; then npm run build:prod; fi
+        - if [ "${AWS_BRANCH}" = "dev" ]; then echo "dev branch"; fi
+        - if [ "${AWS_BRANCH}" = "dev" ]; then npm run build:prue; fi
+  artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: dist/new-aws-app
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
