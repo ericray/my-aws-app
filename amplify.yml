@@ -6,10 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
-        - if [ "${AWS_BRANCH}" = "master" ]; then echo "master branch"; fi
-        - if [ "${AWS_BRANCH}" = "master" ]; then npm run build; fi
-        - if [ "${AWS_BRANCH}" = "dev" ]; then echo "dev branch"; fi
-        - if [ "${AWS_BRANCH}" = "dev" ]; then npm run build:dev; fi
+        - npm run build
   artifacts:
     baseDirectory: dist/angular-aws-app
     files:
