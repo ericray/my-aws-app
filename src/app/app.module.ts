@@ -10,9 +10,11 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { NzTypographyModule } from 'ng-zorro-antd/typography';
+import { ZorroComponentsModule } from './modules/zorro-components/zorro-components.module';
+// import { NzButtonModule } from 'ng-zorro-antd/button';
+// import { NzIconModule } from 'ng-zorro-antd/icon';
+// import { NzTypographyModule } from 'ng-zorro-antd/typography';
+// import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 registerLocaleData(en);
 
@@ -26,9 +28,11 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NzButtonModule,
-    NzIconModule,
-    NzTypographyModule
+    // NzButtonModule,
+    // NzIconModule,
+    // NzTypographyModule,
+    // NzLayoutModule,
+    ZorroComponentsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
